@@ -1,5 +1,6 @@
 import UIKit
 
+// Mark: - Working thread
 class Work: Thread {
     private var stash: Stash
     private var count: Int
@@ -28,6 +29,7 @@ class Work: Thread {
     }
 }
 
+// Mark: - Generator thread
 class Generator: Thread {
     private var stash: Stash
     private var count: Int
@@ -56,6 +58,7 @@ class Generator: Thread {
     }
 }
 
+// Mark: - Class Stash
 class Stash {
     var chipArray: [Chip] = []
     private var queue: DispatchQueue = DispatchQueue(label: "syncQueue", qos: .utility, attributes: .concurrent)
